@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton_calculate">
+   <widget class="QPushButton" name="pushButtonCalculate">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -136,7 +136,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="comboBoxU1">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -166,7 +166,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="comboBoxU2">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -260,7 +260,7 @@
    </widget>
    <zorder>groupBoxEingabe</zorder>
    <zorder>groupBoxAusgabe</zorder>
-   <zorder>pushButton_calculate</zorder>
+   <zorder>pushButtonCalculate</zorder>
    <zorder>radioButtonE3</zorder>
    <zorder>radioButtonE6</zorder>
    <zorder>radioButtonE12</zorder>
@@ -268,8 +268,8 @@
    <zorder>textEditU1</zorder>
    <zorder>textEditU2</zorder>
    <zorder>label_picture</zorder>
-   <zorder>comboBox</zorder>
-   <zorder>comboBox_2</zorder>
+   <zorder>comboBoxU1</zorder>
+   <zorder>comboBoxU2</zorder>
    <zorder>plainTextEditAusgabe</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
