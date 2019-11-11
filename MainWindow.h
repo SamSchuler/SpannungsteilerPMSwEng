@@ -3,20 +3,24 @@
 
 #include <QMainWindow>
 
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
-  public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+ public:
+  explicit MainWindow(QWidget* parent = nullptr);
+  ~MainWindow();
+  int readU1();
+  int readU2();
+  void startCalculation();
 
-  private:
-    Ui::MainWindow *ui;
+ private:
+  Ui::MainWindow* ui;
 };
 
-#endif // MAINWINDOW_H
+#endif  // MAINWINDOW_H
