@@ -3,6 +3,11 @@
 
 #include <QMainWindow>
 
+#define E3 1
+#define E6 2
+#define E12 3
+#define E24 4
+
 namespace Ui
 {
 class MainWindow;
@@ -15,9 +20,10 @@ class MainWindow : public QMainWindow
  public:
   explicit MainWindow(QWidget* parent = nullptr);
   ~MainWindow();
+  void startCalculation();
   int readU1();
   int readU2();
-  void startCalculation();
+  int readReihe();
 
  private:
   Ui::MainWindow* ui;
