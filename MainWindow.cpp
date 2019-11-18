@@ -12,6 +12,13 @@ MainWindow::MainWindow(QWidget* parent)
           &MainWindow::startCalculation);
 }
 
+void MainWindow::outputValues()
+{
+  QString text = "Test";
+  // Ausgabetext zusammenbasteln
+  this->ui->plainTextEditAusgabe->setPlainText(text);
+}
+
 void MainWindow::startCalculation()
 {
   int u1 = 0;  // Spannung U1 in uV
@@ -20,6 +27,8 @@ void MainWindow::startCalculation()
   u1 = this->readU1();
   u2 = this->readU2();
   reihe = this->readReihe();
+
+  outputValues();
 
   // Zum Testen (Braucht es später nicht)
   qDebug() << "U1: " << u1 << endl;

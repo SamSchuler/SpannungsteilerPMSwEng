@@ -24,6 +24,7 @@ class MainWindow : public QMainWindow
   int readU1();
   int readU2();
   int readReihe();
+  void outputValues();
 
  private:
   Ui::MainWindow* ui;
