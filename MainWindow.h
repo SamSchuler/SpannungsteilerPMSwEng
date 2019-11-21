@@ -8,13 +8,15 @@
 #define E12 3
 #define E24 4
 
+int r1 = 0;
+int r2 = 0;
+
 namespace Ui
 {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
   Q_OBJECT
 
  public:
@@ -25,6 +27,7 @@ class MainWindow : public QMainWindow
   int readU2();
   int readReihe();
   void outputValues();
+  double calculate(int u1, int u2, int reihe);
 
  private:
   Ui::MainWindow* ui;

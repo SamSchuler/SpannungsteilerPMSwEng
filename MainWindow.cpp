@@ -28,6 +28,8 @@ void MainWindow::startCalculation()
   u2 = this->readU2();
   reihe = this->readReihe();
 
+  // Berechnung
+
   outputValues();
 
   // Zum Testen (Braucht es später nicht)
@@ -50,6 +52,10 @@ void MainWindow::startCalculation()
   {
     qDebug() << "E24" << endl;
   }
+}
+
+double MainWindow::calculate(int u1, int u2, int reihe)
+{
 }
 
 int MainWindow::readReihe()
