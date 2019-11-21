@@ -3,6 +3,10 @@
 #include <string>
 #include "ui_MainWindow.h"
 
+// Globale Variable
+int r1 = 0;
+int r2 = 0;
+
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -54,8 +58,50 @@ void MainWindow::startCalculation()
   }
 }
 
-double MainWindow::calculate(int u1, int u2, int reihe)
+void MainWindow::calculate(int u1, int u2, int reihe)
 {
+  double ereihe[24];
+  double prop;
+  if (reihe == 1)
+  {
+    double ereihe[3] = {1.0, 2.2, 4.7};  // E3
+  }
+
+  if (reihe == 4)
+  {
+    double ereihe[24] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0,
+                         2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3,
+                         4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1};
+  }
+
+  double widWerte[3][3];
+  double zwischenWert[3][3];
+  int anz = 0;
+
+  // Verhältinis berechnen
+  prop = u2 / u1;
+
+  // Verhältnis suchen
+  for (int i = 0; i < 3; ++i)
+  {
+    for (int j = 0; j < 3; ++j)
+    {
+      widWerte[i][j] = ereihe[j] / (ereihe[j] + ereihe[i]);
+      zwischenWert[i][j] = prop - widWerte[i][j];
+
+      if (zwischenWert[i][j] < 0)  // Betrag berechnen
+      {
+        zwischenWert[i][j] *= (-1);
+      }
+
+      if (zwischenWert[i][j] < zwischenWert[r1][r2])
+      {
+        r1 = i;  // y-achse
+        r2 = j;  // x-achse
+        anz++;
+      }
+    }
+  }
 }
 
 int MainWindow::readReihe()
