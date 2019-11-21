@@ -4,8 +4,8 @@
 #include "ui_MainWindow.h"
 
 // Globale Variable
-int r1 = 0;
-int r2 = 0;
+double r1 = 0;
+double r2 = 0;
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -33,6 +33,7 @@ void MainWindow::startCalculation()
   reihe = this->readReihe();
 
   // Berechnung
+  MainWindow::calculate(u1, u2, reihe);
 
   outputValues();
 
@@ -60,6 +61,8 @@ void MainWindow::startCalculation()
 
 void MainWindow::calculate(int u1, int u2, int reihe)
 {
+  int r1i = 0;
+  int r2i = 0;
   double ereihe[24];
   double prop;
   if (reihe == 1)
@@ -94,14 +97,17 @@ void MainWindow::calculate(int u1, int u2, int reihe)
         zwischenWert[i][j] *= (-1);
       }
 
-      if (zwischenWert[i][j] < zwischenWert[r1][r2])
+      if (zwischenWert[i][j] < zwischenWert[r2i][r1i])
       {
-        r1 = i;  // y-achse
-        r2 = j;  // x-achse
+        r2i = i;  // y-achse
+        r1i = j;  // x-achse
         anz++;
       }
     }
   }
+  r1 = ereihe[r1i];
+  r2 = ereihe[r2i];
+  qDebug() << "r1=" << r1 << " r2=" << r2 << endl;
 }
 
 int MainWindow::readReihe()

@@ -8,8 +8,8 @@
 #define E12 3
 #define E24 4
 
-extern int r1;
-extern int r2;
+extern double r1;
+extern double r2;
 namespace Ui
 {
 class MainWindow;
