@@ -141,7 +141,7 @@ void MainWindow::calculate(int u1, int u2, int reihe)
   double prop;
 
   // Verhältinis berechnen
-  prop = u2 / u1;
+  prop = double(u2) / double(u1);
 
   if (reihe == 1)
   {
