@@ -15,7 +15,8 @@ namespace Ui
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
   Q_OBJECT
 
  public:
@@ -26,7 +27,7 @@ class MainWindow : public QMainWindow {
   int readU2();
   int readReihe();
   void outputValues();
-  void calculate(int u1, int u2, int reihe);
+  bool calculate(int u1, int u2, int reihe);
 
  private:
   Ui::MainWindow* ui;

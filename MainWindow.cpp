@@ -31,9 +31,10 @@ void MainWindow::startCalculation()
   u1 = this->readU1();
   u2 = this->readU2();
   reihe = this->readReihe();
+  bool possibility;
 
   // Berechnung
-  MainWindow::calculate(u1, u2, reihe);
+  possibility = MainWindow::calculate(u1, u2, reihe);
 
   outputValues();
 
@@ -59,7 +60,7 @@ void MainWindow::startCalculation()
   }
 }
 
-void MainWindow::calculate(int u1, int u2, int reihe)
+bool MainWindow::calculate(int u1, int u2, int reihe)
 {
   // Variablen
   int r1i = 0;
@@ -265,6 +266,14 @@ void MainWindow::calculate(int u1, int u2, int reihe)
     r2 = ereihe4[r2i];
     qDebug() << "r1=" << r1 << " r2=" << r2 << endl;
     qDebug() << "r1i=" << r1i << " r2i=" << r2i << endl;
+  }
+  if (prop == 0.5)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
   }
 }
 
