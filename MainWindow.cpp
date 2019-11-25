@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include <QDebug>
+#include <iostream>
 #include <string>
 #include "ui_MainWindow.h"
 
@@ -16,10 +17,56 @@ MainWindow::MainWindow(QWidget* parent)
           &MainWindow::startCalculation);
 }
 
-void MainWindow::outputValues()
+void MainWindow::outputValues(double r1, double r2, bool possibility);
 {
-  QString text = "Test";
-  // Ausgabetext zusammenbasteln
+  double x1 = r1;  // R1
+  double x2 = r2;  // R2
+  bool ratio =
+      possibility;  // das spannungsverhältnis erlaubt mehrere möglichkeiten.
+  QString unit1 = "Ohm";
+  QString unit2 = "Ohm";
+  QString text;
+  QString ratiotext =
+      "Das Widerstandsverhältnis ist 1:1. R1 = R2. \nAlle Werte möglich.";
+  if (ratio == 1)
+  {
+    text = ratiotext;
+  }
+  else
+  {
+    if ((x1 < 1000) && (x2 < 1000))
+    {
+      x1 = x1 * 1000;
+      x2 = x2 * 1000;
+    }
+
+    if (x1 > 1000)
+    {
+      unit1 = "kOhm";
+      x1 = x1 / 1000;
+      if (x1 > 1000)
+      {
+        unit1 = "MOhm";
+        x1 = x1 / 1000;
+      }
+    }
+
+    if (x2 > 1000)
+    {
+      unit2 = "kOhm";
+      x2 = x2 / 1000;
+      if (x2 > 1000)
+      {
+        unit2 = "MOhm";
+        x2 = x2 / 1000;
+      }
+    }
+    text =
+        QString("R1: %1 %2 \nR2: %3 %4").arg(r1).arg(unit1).arg(r2).arg(unit2);
+  }
+
+  qDebug() << text;
+
   this->ui->plainTextEditAusgabe->setPlainText(text);
 }
 
@@ -36,7 +83,7 @@ void MainWindow::startCalculation()
   // Berechnung
   possibility = MainWindow::calculate(u1, u2, reihe);
 
-  outputValues();
+  outputValues(r1, r2, possibility);
 
   // Zum Testen (Braucht es später nicht)
   qDebug() << "U1: " << u1 << endl;

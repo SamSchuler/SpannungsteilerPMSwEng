@@ -26,7 +26,7 @@ class MainWindow : public QMainWindow
   int readU1();
   int readU2();
   int readReihe();
-  void outputValues();
+  void outputValues(double r1, double r2, bool possibility);
   bool calculate(int u1, int u2, int reihe);
 
  private:
