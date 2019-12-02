@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget* parent)
   ui->setupUi(this);
 
   // Bild einfügen
-  QPixmap pix(":/image/SpannungsteilerBild.png");
-  ui->label_picture->setPixmap(pix);
+  // QPixmap pix("/image/SpannungsteilerBild.png");
+  // ui->label_picture->setPixmap(pix);
 
   connect(ui->pushButtonCalculate, &QPushButton::clicked, this,
           &MainWindow::startCalculation);
