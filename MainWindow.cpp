@@ -245,10 +245,10 @@ bool MainWindow::calculate(int u1, int u2, int reihe)
           zwischenWert[i][j] *= (-1);
         }
 
-        if (zwischenWert[i][j] < zwischenWert[r2i][r1i])
+        if (zwischenWert[i][j] < zwischenWert[r1i][r2i])
         {
-          r2i = i;  // y-achse
-          r1i = j;  // x-achse
+          r1i = i;  // y-achse
+          r2i = j;  // x-achse
         }
       }
     }
