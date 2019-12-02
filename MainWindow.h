@@ -15,7 +15,8 @@ namespace Ui
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
   Q_OBJECT
 
  public:
@@ -25,8 +26,8 @@ class MainWindow : public QMainWindow {
   int readU1();
   int readU2();
   int readReihe();
-  void outputValues(double r1, double r2, bool possibility);  // Ausgabe
-  bool calculate(int u1, int u2, int reihe);  // Widerstandsberechnung
+  void outputValues(double r1, double r2, int fail);  // Ausgabe
+  bool calculate(int u1, int u2, int reihe);          // Widerstandsberechnung
 
  private:
   Ui::MainWindow* ui;

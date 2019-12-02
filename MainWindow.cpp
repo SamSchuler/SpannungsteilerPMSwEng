@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget* parent)
   ui->setupUi(this);
 
   // Bild einfügen
-  QPixmap pix(":/image/SpannungsteilerBild.png");
-  ui->label_picture->setPixmap(pix);
+  // QPixmap pix("/image/SpannungsteilerBild.png");
+  // ui->label_picture->setPixmap(pix);
 
   connect(ui->pushButtonCalculate, &QPushButton::clicked, this,
           &MainWindow::startCalculation);
@@ -26,17 +26,32 @@ void MainWindow::startCalculation()
   int u1 = 0;  // Spannung U1 in uV
   int u2 = 0;  // Spannung U2 in uV
   int reihe = 0;
+  int fail = 0;  // 1 = Verhätnis 2:1 (beide Widerstände gleich)
+                 // 2 = Eingangsspannung höher als Ausgangsspannung
+                 // 3 = Spannungseingabe ausserhalb Bereich
   // double r1 = 0;
   // double r2 = 0;
   u1 = this->readU1();
   u2 = this->readU2();
   reihe = this->readReihe();
-  bool possibility;
 
-  // Berechnung
-  possibility = MainWindow::calculate(u1, u2, reihe);
+  if (u1 <= u2)  // Eingangsspannung muss grösser als Ausgangsspanung sein
+  {
+    fail = 2;
+  }
+  if ((u1 > 1000000000) || (u2 > 1000000000) || (u1 < 1) ||
+      (u2 < 1))  // Wenn grösser als 1kV oder kleiner 1uV
+  {
+    fail = 3;
+  }
 
-  outputValues(r1, r2, possibility);
+  if (fail <= 1)  // Nur dann Berechnung durchführen
+  {
+    // Berechnung
+    fail = MainWindow::calculate(u1, u2, reihe);
+  }
+
+  outputValues(r1, r2, fail);
 
   // Zum Testen (Braucht es später nicht)
   qDebug() << "U1: " << u1 << endl;
@@ -60,52 +75,67 @@ void MainWindow::startCalculation()
   }
 }
 
-void MainWindow::outputValues(double r1, double r2, bool possibility)
+void MainWindow::outputValues(double r1, double r2, int fail)
 {
-  double x1 = r1;  // R1
-  double x2 = r2;  // R2
-  bool ratio =
-      possibility;  // das spannungsverhältnis erlaubt mehrere möglichkeiten.
+  double x1 = r1;      // R1
+  double x2 = r2;      // R2
+  int failure = fail;  // das spannungsverhältnis erlaubt mehrere möglichkeiten.
   QString unit1 = "Ohm";
   QString unit2 = "Ohm";
   QString text;
-  QString ratiotext =
+  QString fail1 =
       "Das Widerstandsverhältnis ist 1:1. R1 = R2. \nAlle Werte möglich.";
-  if (ratio == 1)
+  QString fail2 =
+      "Die Eingangsspannung muss höher als die Ausgangsspannung sein.";
+  QString fail3 =
+      "Mindestens eine Spannung ausserhalb dem Bereich von 1uV bis 1kV.";
+  switch (failure)
   {
-    text = ratiotext;
-  }
-  else
-  {
-    if ((x1 <= 1000) && (x2 <= 1000))
-    {
-      x1 = x1 * 1000;
-      x2 = x2 * 1000;
-    }
+    case 1:
+      text = fail1;
+      break;
 
-    if (x1 >= 1000)
-    {
-      unit1 = "kOhm";
-      x1 = x1 / 1000;
+    case 2:
+      text = fail2;
+      break;
+
+    case 3:
+      text = fail3;
+      break;
+
+    case 0:
+      if ((x1 <= 1000) && (x2 <= 1000))
+      {
+        x1 = x1 * 1000;
+        x2 = x2 * 1000;
+      }
+
       if (x1 >= 1000)
       {
-        unit1 = "MOhm";
+        unit1 = "kOhm";
         x1 = x1 / 1000;
+        if (x1 >= 1000)
+        {
+          unit1 = "MOhm";
+          x1 = x1 / 1000;
+        }
       }
-    }
 
-    if (x2 >= 1000)
-    {
-      unit2 = "kOhm";
-      x2 = x2 / 1000;
       if (x2 >= 1000)
       {
-        unit2 = "MOhm";
+        unit2 = "kOhm";
         x2 = x2 / 1000;
+        if (x2 >= 1000)
+        {
+          unit2 = "MOhm";
+          x2 = x2 / 1000;
+        }
       }
-    }
-    text =
-        QString("R1: %1 %2 \nR2: %3 %4").arg(x1).arg(unit1).arg(x2).arg(unit2);
+      text = QString("R1: %1 %2 \nR2: %3 %4")
+                 .arg(x1)
+                 .arg(unit1)
+                 .arg(x2)
+                 .arg(unit2);
   }
 
   qDebug() << text;
