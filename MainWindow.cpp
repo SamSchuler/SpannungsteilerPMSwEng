@@ -146,8 +146,8 @@ void MainWindow::outputValues(double r1, double r2, int fail)
 bool MainWindow::calculate(int u1, int u2, int reihe)
 {
   // Variablen
-  int r1i = 0;
-  int r2i = 0;
+  int rj = 0;
+  int ri = 0;
   r1 = 0;
   r2 = 0;
 
@@ -245,17 +245,17 @@ bool MainWindow::calculate(int u1, int u2, int reihe)
           zwischenWert[i][j] *= (-1);
         }
 
-        if (zwischenWert[i][j] < zwischenWert[r1i][r2i])
+        if (zwischenWert[i][j] < zwischenWert[ri][rj])
         {
-          r1i = i;  // y-achse
-          r2i = j;  // x-achse
+          ri = i;  // y-achse
+          rj = j;  // x-achse
         }
       }
     }
-    r1 = ereihe1[r1i];
-    r2 = ereihe1[r2i];
+    r1 = ereihe1[ri];
+    r2 = ereihe1[rj];
     qDebug() << "r1=" << r1 << " r2=" << r2 << endl;
-    qDebug() << "r1i=" << r1i << " r2i=" << r2i << endl;
+    qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
 
   if (reihe == 2)
@@ -276,17 +276,17 @@ bool MainWindow::calculate(int u1, int u2, int reihe)
           zwischenWert[i][j] *= (-1);
         }
 
-        if (zwischenWert[i][j] < zwischenWert[r2i][r1i])
+        if (zwischenWert[i][j] < zwischenWert[ri][rj])
         {
-          r2i = i;  // y-achse
-          r1i = j;  // x-achse
+          ri = i;  // y-achse
+          rj = j;  // x-achse
         }
       }
     }
-    r1 = ereihe2[r1i];
-    r2 = ereihe2[r2i];
+    r1 = ereihe2[ri];
+    r2 = ereihe2[rj];
     qDebug() << "r1=" << r1 << " r2=" << r2 << endl;
-    qDebug() << "r1i=" << r1i << " r2i=" << r2i << endl;
+    qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
 
   if (reihe == 3)
@@ -307,17 +307,17 @@ bool MainWindow::calculate(int u1, int u2, int reihe)
           zwischenWert[i][j] *= (-1);
         }
 
-        if (zwischenWert[i][j] < zwischenWert[r2i][r1i])
+        if (zwischenWert[i][j] < zwischenWert[ri][rj])
         {
-          r2i = i;  // y-achse
-          r1i = j;  // x-achse
+          ri = i;  // y-achse
+          rj = j;  // x-achse
         }
       }
     }
-    r1 = ereihe3[r1i];
-    r2 = ereihe3[r2i];
+    r1 = ereihe3[ri];
+    r2 = ereihe3[rj];
     qDebug() << "r1=" << r1 << " r2=" << r2 << endl;
-    qDebug() << "r1i=" << r1i << " r2i=" << r2i << endl;
+    qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
 
   if (reihe == 4)
@@ -338,17 +338,17 @@ bool MainWindow::calculate(int u1, int u2, int reihe)
           zwischenWert[i][j] *= (-1);
         }
 
-        if (zwischenWert[i][j] < zwischenWert[r2i][r1i])
+        if (zwischenWert[i][j] < zwischenWert[ri][rj])
         {
-          r2i = i;  // y-achse
-          r1i = j;  // x-achse
+          ri = i;  // y-achse
+          rj = j;  // x-achse
         }
       }
     }
-    r1 = ereihe4[r1i];
-    r2 = ereihe4[r2i];
+    r1 = ereihe4[ri];
+    r2 = ereihe4[rj];
     qDebug() << "r1=" << r1 << " r2=" << r2 << endl;
-    qDebug() << "r1i=" << r1i << " r2i=" << r2i << endl;
+    qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
   if (prop == 0.5)
   {
