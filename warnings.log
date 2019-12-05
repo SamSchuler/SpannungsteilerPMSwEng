@@ -1,0 +1,11 @@
+warning: The selected output language "german" has not been updated
+since release 1.8.4.  As a result some sentences may appear in English.
+
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:19: warning: Compound MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:23: warning: Member MainWindow(QWidget *parent=nullptr) (function) of class MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:25: warning: Member startCalculation() (function) of class MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:26: warning: Member readU1() (function) of class MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:27: warning: Member readU2() (function) of class MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:28: warning: Member readReihe() (function) of class MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:29: warning: Member outputValues(double r1, double r2, int fail) (function) of class MainWindow is not documented.
+/home/user/SpannungsteilerPMSwEng/MainWindow.h:30: warning: Member calculate(int u1, int u2, int reihe) (function) of class MainWindow is not documented.

@@ -27,7 +27,12 @@ class MainWindow : public QMainWindow
   int readU2();
   int readReihe();
   void outputValues(double r1, double r2, int fail);  // Ausgabe
-  bool calculate(int u1, int u2, int reihe);          // Widerstandsberechnung
+  int calculate(
+      int u1, int u2,
+      int reihe);  ///\brief Berechnung der optimalen Werte von R1 und R2.
+  /// Alle Verhältnisse aus R1 und R2 werden in einem generierten Array
+  /// abgespeichert.
+  /// Aus diesem Array wird das best mögliche Verhältnis ausgegeben.
 
  private:
   Ui::MainWindow* ui;

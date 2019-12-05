@@ -143,7 +143,7 @@ void MainWindow::outputValues(double r1, double r2, int fail)
   this->ui->plainTextEditAusgabe->setPlainText(text);
 }
 
-bool MainWindow::calculate(int u1, int u2, int reihe)
+int MainWindow::calculate(int u1, int u2, int reihe)
 {
   // Variablen
   int rj = 0;
