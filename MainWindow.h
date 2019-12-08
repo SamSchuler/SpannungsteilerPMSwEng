@@ -3,10 +3,13 @@
 
 #include <QMainWindow>
 
-#define E3 1
-#define E6 2
-#define E12 3
-#define E24 4
+enum eReihe
+{
+  E3,
+  E6,
+  E12,
+  E24
+};
 
 extern double r1;
 extern double r2;
@@ -15,16 +18,32 @@ namespace Ui
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
   Q_OBJECT
 
  public:
   explicit MainWindow(QWidget* parent = nullptr);
   ~MainWindow();
+
+  ///
+  /// \brief Wird aufgerufen wenn der berechnen Button angeklickt wird.
+  ///     Damit wird der ganze Ablauf für eine Widerstandsberchnung gestartet.
+  ///
   void startCalculation();  // Berechnung starten
+  ///
+  /// \brief Liest die Spannung U1 vom Eingabefeld.
+  /// \return Gibt die Spannung in uV zurück.
+  ///
   int readU1();
+  ///
+  /// \brief Liest die Spannung U2 vom Eingabefeld.
+  /// \return Gibt die Spannung in uV zurück.
+  ///
   int readU2();
+  ///
+  /// \brief Schaut welche E-Reihe im GUI ausgewählt wurde.
+  /// \return Gibt die ausgewählte E-Reihe zurück. (enum: E3, E6, E12, E24)
+  ///
   int readReihe();
   void outputValues(double r1, double r2, int fail);  // Ausgabe
   int calculate(
