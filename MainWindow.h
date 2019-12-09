@@ -46,6 +46,13 @@ class MainWindow : public QMainWindow
   /// \return Gibt die ausgewählte E-Reihe zurück. (enum: E3, E6, E12, E24)
   ///
   int readReihe();
+
+  ///
+  /// \brief outputValues für Widerstandswerte
+  /// \param r1 für Widerstand R1
+  /// \param r2 für Widerstand R2
+  /// \param fail für Fehler
+  ///
   void outputValues(double r1, double r2, int fail);  // Ausgabe
   ///
   /// \brief calculate
