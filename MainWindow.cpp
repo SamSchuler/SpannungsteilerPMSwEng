@@ -88,7 +88,8 @@ void MainWindow::outputValues(double r1, double r2, int fail)
   QString fail2 =
       "Die Eingangsspannung muss höher als die Ausgangsspannung sein.";
   QString fail3 =
-      "Mindestens eine Spannung ausserhalb dem Bereich von 1uV bis 1kV.";
+      "Mindestens eine Spannung ausserhalb dem Bereich von 1uV bis 1kV oder "
+      "falsche Zeicheneingabe (Kommas und Punkte verboten)";
   switch (failure)
   {
     case 1:
