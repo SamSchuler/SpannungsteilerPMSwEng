@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['startcalculation',['startCalculation',['../classMainWindow.html#a2928be63df3071466644eca76d6e32a7',1,'MainWindow']]]
+  ['outputvalues',['outputValues',['../classMainWindow.html#a12b9bbad12422386cec9da99c2ea3d57',1,'MainWindow']]]
 ];

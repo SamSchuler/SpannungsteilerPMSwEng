@@ -2,7 +2,8 @@
 \label{classMainWindow}\index{Main\+Window@{Main\+Window}}
 
 
-Klassendiagramm für Main\+Window\+:\nopagebreak
+Klassendiagramm für Main\+Window\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,11 +13,11 @@ Klassendiagramm für Main\+Window\+:\nopagebreak
 \subsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Main\+Window} (Q\+Widget $\ast$parent=nullptr)\hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}
-
+\mbox{\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}} 
+{\bfseries Main\+Window} (Q\+Widget $\ast$parent=nullptr)
 \item 
-void \hyperlink{classMainWindow_a2928be63df3071466644eca76d6e32a7}{start\+Calculation} ()\hypertarget{classMainWindow_a2928be63df3071466644eca76d6e32a7}{}\label{classMainWindow_a2928be63df3071466644eca76d6e32a7}
-
+\mbox{\Hypertarget{classMainWindow_a2928be63df3071466644eca76d6e32a7}\label{classMainWindow_a2928be63df3071466644eca76d6e32a7}} 
+void \hyperlink{classMainWindow_a2928be63df3071466644eca76d6e32a7}{start\+Calculation} ()
 \begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der berechnen Button angeklickt wird. Damit wird der ganze Ablauf für eine Widerstandsberchnung gestartet. \end{DoxyCompactList}\item 
 int \hyperlink{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}{read\+U1} ()
 \begin{DoxyCompactList}\small\item\em Liest die Spannung U1 vom Eingabefeld. \end{DoxyCompactList}\item 
@@ -24,22 +25,60 @@ int \hyperlink{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}{read\+U2} ()
 \begin{DoxyCompactList}\small\item\em Liest die Spannung U2 vom Eingabefeld. \end{DoxyCompactList}\item 
 int \hyperlink{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}{read\+Reihe} ()
 \begin{DoxyCompactList}\small\item\em Schaut welche E-\/\+Reihe im G\+UI ausgewählt wurde. \end{DoxyCompactList}\item 
-void {\bfseries output\+Values} (double r1, double r2, int fail)\hypertarget{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}{}\label{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}
-
-\item 
-int {\bfseries calculate} (int u1, int u2, int reihe)\hypertarget{classMainWindow_ab0f78571621e4f8e82f51464648cf017}{}\label{classMainWindow_ab0f78571621e4f8e82f51464648cf017}
-
-\end{DoxyCompactItemize}
+void \hyperlink{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}{output\+Values} (double r1, double r2, int fail)
+\begin{DoxyCompactList}\small\item\em output\+Values für Widerstandswerte \end{DoxyCompactList}\item 
+int \hyperlink{classMainWindow_ab0f78571621e4f8e82f51464648cf017}{calculate} (int u1, int u2, int reihe)
+\begin{DoxyCompactList}\small\item\em calculate \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classMainWindow_ab0f78571621e4f8e82f51464648cf017}\label{classMainWindow_ab0f78571621e4f8e82f51464648cf017}} 
+\index{Main\+Window@{Main\+Window}!calculate@{calculate}}
+\index{calculate@{calculate}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily int Main\+Window\+::calculate (\begin{DoxyParamCaption}\item[{int}]{u1,  }\item[{int}]{u2,  }\item[{int}]{reihe }\end{DoxyParamCaption})}
+
+
+
+calculate 
+
+
+\begin{DoxyParams}{Parameter}
+{\em u1} & \\
+\hline
+{\em u2} & \\
+\hline
+{\em reihe} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}\label{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}} 
+\index{Main\+Window@{Main\+Window}!output\+Values@{output\+Values}}
+\index{output\+Values@{output\+Values}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{output\+Values()}{outputValues()}}
+{\footnotesize\ttfamily void Main\+Window\+::output\+Values (\begin{DoxyParamCaption}\item[{double}]{r1,  }\item[{double}]{r2,  }\item[{int}]{fail }\end{DoxyParamCaption})}
+
+
+
+output\+Values für Widerstandswerte 
+
+
+\begin{DoxyParams}{Parameter}
+{\em r1} & für Widerstand R1 \\
+\hline
+{\em r2} & für Widerstand R2 \\
+\hline
+{\em fail} & für Fehler \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}\label{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}} 
 \index{Main\+Window@{Main\+Window}!read\+Reihe@{read\+Reihe}}
 \index{read\+Reihe@{read\+Reihe}!Main\+Window@{Main\+Window}}
-\subsubsection[{\texorpdfstring{read\+Reihe()}{readReihe()}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::read\+Reihe (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}{}\label{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}
+\subsubsection{\texorpdfstring{read\+Reihe()}{readReihe()}}
+{\footnotesize\ttfamily int Main\+Window\+::read\+Reihe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Schaut welche E-\/\+Reihe im G\+UI ausgewählt wurde. 
@@ -47,13 +86,12 @@ Schaut welche E-\/\+Reihe im G\+UI ausgewählt wurde.
 \begin{DoxyReturn}{Rückgabe}
 Gibt die ausgewählte E-\/\+Reihe zurück. (enum\+: E3, E6, E12, E24) 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}\label{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}} 
 \index{Main\+Window@{Main\+Window}!read\+U1@{read\+U1}}
 \index{read\+U1@{read\+U1}!Main\+Window@{Main\+Window}}
-\subsubsection[{\texorpdfstring{read\+U1()}{readU1()}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::read\+U1 (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}{}\label{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}
+\subsubsection{\texorpdfstring{read\+U1()}{readU1()}}
+{\footnotesize\ttfamily int Main\+Window\+::read\+U1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Liest die Spannung U1 vom Eingabefeld. 
@@ -61,13 +99,12 @@ Liest die Spannung U1 vom Eingabefeld.
 \begin{DoxyReturn}{Rückgabe}
 Gibt die Spannung in uV zurück. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}\label{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}} 
 \index{Main\+Window@{Main\+Window}!read\+U2@{read\+U2}}
 \index{read\+U2@{read\+U2}!Main\+Window@{Main\+Window}}
-\subsubsection[{\texorpdfstring{read\+U2()}{readU2()}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::read\+U2 (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}{}\label{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}
+\subsubsection{\texorpdfstring{read\+U2()}{readU2()}}
+{\footnotesize\ttfamily int Main\+Window\+::read\+U2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Liest die Spannung U2 vom Eingabefeld. 
