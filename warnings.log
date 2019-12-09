@@ -1,8 +1,3 @@
 warning: The selected output language "german" has not been updated
 since release 1.8.4.  As a result some sentences may appear in English.
 
-/home/user/workspace/SpannungsteilerPMSwEng/MainWindow.h:22: warning: Compound MainWindow is not documented.
-/home/user/workspace/SpannungsteilerPMSwEng/MainWindow.h:26: warning: Member MainWindow(QWidget *parent=nullptr) (function) of class MainWindow is not documented.
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/user/workspace/SpannungsteilerPMSwEng/doc/html/classMainWindow__inherit__graph.dot" -Tpng -o "/home/user/workspace/SpannungsteilerPMSwEng/doc/html/classMainWindow__inherit__graph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/user/workspace/SpannungsteilerPMSwEng/doc/latex/classMainWindow__inherit__graph.dot" -Tpdf -o "/home/user/workspace/SpannungsteilerPMSwEng/doc/latex/classMainWindow__inherit__graph.pdf"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/user/workspace/SpannungsteilerPMSwEng/doc/html/inherit_graph_0.dot" -Tpng -o "/home/user/workspace/SpannungsteilerPMSwEng/doc/html/inherit_graph_0.png"'

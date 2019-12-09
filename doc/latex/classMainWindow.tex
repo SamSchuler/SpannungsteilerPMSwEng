@@ -2,8 +2,16 @@
 \label{classMainWindow}\index{Main\+Window@{Main\+Window}}
 
 
-Klassendiagramm für Main\+Window\+:
-\nopagebreak
+The \hyperlink{classMainWindow}{Main\+Window} class.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
+
+
+Klassendiagramm für Main\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,11 +21,13 @@ Klassendiagramm für Main\+Window\+:
 \subsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}} 
-{\bfseries Main\+Window} (Q\+Widget $\ast$parent=nullptr)
-\item 
-\mbox{\Hypertarget{classMainWindow_a2928be63df3071466644eca76d6e32a7}\label{classMainWindow_a2928be63df3071466644eca76d6e32a7}} 
-void \hyperlink{classMainWindow_a2928be63df3071466644eca76d6e32a7}{start\+Calculation} ()
+\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMainWindow}{Main\+Window} Konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window} ()\hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMainWindow}{Main\+Window} Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classMainWindow_a2928be63df3071466644eca76d6e32a7}{start\+Calculation} ()\hypertarget{classMainWindow_a2928be63df3071466644eca76d6e32a7}{}\label{classMainWindow_a2928be63df3071466644eca76d6e32a7}
+
 \begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der berechnen Button angeklickt wird. Damit wird der ganze Ablauf für eine Widerstandsberchnung gestartet. \end{DoxyCompactList}\item 
 int \hyperlink{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}{read\+U1} ()
 \begin{DoxyCompactList}\small\item\em Liest die Spannung U1 vom Eingabefeld. \end{DoxyCompactList}\item 
@@ -28,38 +38,66 @@ int \hyperlink{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}{read\+Reihe} (
 void \hyperlink{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}{output\+Values} (double r1, double r2, int fail)
 \begin{DoxyCompactList}\small\item\em output\+Values für Widerstandswerte \end{DoxyCompactList}\item 
 int \hyperlink{classMainWindow_ab0f78571621e4f8e82f51464648cf017}{calculate} (int u1, int u2, int reihe)
-\begin{DoxyCompactList}\small\item\em calculate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Berechnung der optimalen Werte von R1 und R2. Alle Verhältnisse aus R1 und R2 werden in einem generierten Array abgespeichert. Aus diesem Array wird das best mögliche Verhältnis ausgegeben. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Dokumentation der Elementfunktionen}
-\mbox{\Hypertarget{classMainWindow_ab0f78571621e4f8e82f51464648cf017}\label{classMainWindow_ab0f78571621e4f8e82f51464648cf017}} 
-\index{Main\+Window@{Main\+Window}!calculate@{calculate}}
-\index{calculate@{calculate}!Main\+Window@{Main\+Window}}
-\subsubsection{\texorpdfstring{calculate()}{calculate()}}
-{\footnotesize\ttfamily int Main\+Window\+::calculate (\begin{DoxyParamCaption}\item[{int}]{u1,  }\item[{int}]{u2,  }\item[{int}]{reihe }\end{DoxyParamCaption})}
+\subsection{Ausführliche Beschreibung}
+The \hyperlink{classMainWindow}{Main\+Window} class. 
+
+\subsection{Beschreibung der Konstruktoren und Destruktoren}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{Main\+Window(\+Q\+Widget $\ast$parent=nullptr)}{MainWindow(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::\+Main\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}
 
 
-
-calculate 
+\hyperlink{classMainWindow}{Main\+Window} Konstruktor. 
 
 
 \begin{DoxyParams}{Parameter}
-{\em u1} & \\
+{\em parent} & \\
 \hline
-{\em u2} & \\
+\end{DoxyParams}
+
+
+\subsection{Dokumentation der Elementfunktionen}
+\index{Main\+Window@{Main\+Window}!calculate@{calculate}}
+\index{calculate@{calculate}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{calculate(int u1, int u2, int reihe)}{calculate(int u1, int u2, int reihe)}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::calculate (
+\begin{DoxyParamCaption}
+\item[{int}]{u1, }
+\item[{int}]{u2, }
+\item[{int}]{reihe}
+\end{DoxyParamCaption}
+)}\hypertarget{classMainWindow_ab0f78571621e4f8e82f51464648cf017}{}\label{classMainWindow_ab0f78571621e4f8e82f51464648cf017}
+
+
+Berechnung der optimalen Werte von R1 und R2. Alle Verhältnisse aus R1 und R2 werden in einem generierten Array abgespeichert. Aus diesem Array wird das best mögliche Verhältnis ausgegeben. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em u1} & Übergabe von Spannung u1 \\
 \hline
-{\em reihe} & \\
+{\em u2} & Übergabe von Spannung u2 \\
+\hline
+{\em reihe} & Übergabe der ausgewählten E-\/\+Reihe \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-
+1 wenn Widerstandsverhältnis 1 zu 1 ist. Das heisst, jeder Wert ist möglich. Sonst 0. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}\label{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}} 
 \index{Main\+Window@{Main\+Window}!output\+Values@{output\+Values}}
 \index{output\+Values@{output\+Values}!Main\+Window@{Main\+Window}}
-\subsubsection{\texorpdfstring{output\+Values()}{outputValues()}}
-{\footnotesize\ttfamily void Main\+Window\+::output\+Values (\begin{DoxyParamCaption}\item[{double}]{r1,  }\item[{double}]{r2,  }\item[{int}]{fail }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{output\+Values(double r1, double r2, int fail)}{outputValues(double r1, double r2, int fail)}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::output\+Values (
+\begin{DoxyParamCaption}
+\item[{double}]{r1, }
+\item[{double}]{r2, }
+\item[{int}]{fail}
+\end{DoxyParamCaption}
+)}\hypertarget{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}{}\label{classMainWindow_a12b9bbad12422386cec9da99c2ea3d57}
 
 
 output\+Values für Widerstandswerte 
@@ -73,12 +111,13 @@ output\+Values für Widerstandswerte
 {\em fail} & für Fehler \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}\label{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}} 
 \index{Main\+Window@{Main\+Window}!read\+Reihe@{read\+Reihe}}
 \index{read\+Reihe@{read\+Reihe}!Main\+Window@{Main\+Window}}
-\subsubsection{\texorpdfstring{read\+Reihe()}{readReihe()}}
-{\footnotesize\ttfamily int Main\+Window\+::read\+Reihe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{read\+Reihe()}{readReihe()}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::read\+Reihe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}{}\label{classMainWindow_a4869d3468f1124ae508be8e177b66ed3}
 
 
 Schaut welche E-\/\+Reihe im G\+UI ausgewählt wurde. 
@@ -86,12 +125,13 @@ Schaut welche E-\/\+Reihe im G\+UI ausgewählt wurde.
 \begin{DoxyReturn}{Rückgabe}
 Gibt die ausgewählte E-\/\+Reihe zurück. (enum\+: E3, E6, E12, E24) 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}\label{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}} 
 \index{Main\+Window@{Main\+Window}!read\+U1@{read\+U1}}
 \index{read\+U1@{read\+U1}!Main\+Window@{Main\+Window}}
-\subsubsection{\texorpdfstring{read\+U1()}{readU1()}}
-{\footnotesize\ttfamily int Main\+Window\+::read\+U1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{read\+U1()}{readU1()}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::read\+U1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}{}\label{classMainWindow_a3b94ad2c855f6a0df3579c48b1a6f6fd}
 
 
 Liest die Spannung U1 vom Eingabefeld. 
@@ -99,12 +139,13 @@ Liest die Spannung U1 vom Eingabefeld.
 \begin{DoxyReturn}{Rückgabe}
 Gibt die Spannung in uV zurück. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}\label{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}} 
 \index{Main\+Window@{Main\+Window}!read\+U2@{read\+U2}}
 \index{read\+U2@{read\+U2}!Main\+Window@{Main\+Window}}
-\subsubsection{\texorpdfstring{read\+U2()}{readU2()}}
-{\footnotesize\ttfamily int Main\+Window\+::read\+U2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{read\+U2()}{readU2()}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::read\+U2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}{}\label{classMainWindow_ab9a4bb81031d0bcb5cc5d181a26f3429}
 
 
 Liest die Spannung U2 vom Eingabefeld. 
