@@ -18,7 +18,8 @@ namespace Ui
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
   Q_OBJECT
 
  public:
@@ -46,6 +47,13 @@ class MainWindow : public QMainWindow {
   ///
   int readReihe();
   void outputValues(double r1, double r2, int fail);  // Ausgabe
+  ///
+  /// \brief calculate
+  /// \param u1
+  /// \param u2
+  /// \param reihe
+  /// \return
+  ///
   int calculate(
       int u1, int u2,
       int reihe);  ///\brief Berechnung der optimalen Werte von R1 und R2.

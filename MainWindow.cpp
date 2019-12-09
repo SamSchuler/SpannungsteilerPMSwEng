@@ -227,7 +227,7 @@ int MainWindow::calculate(int u1, int u2, int reihe)
   // Verhältinis berechnen
   prop = double(u2) / double(u1);
 
-  if (reihe == 1)
+  if (reihe == E3)
   {
     double widWerte[27][27];
     double zwischenWert[27][27];
@@ -258,7 +258,7 @@ int MainWindow::calculate(int u1, int u2, int reihe)
     qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
 
-  if (reihe == 2)
+  if (reihe == E6)
   {
     double widWerte[54][54];
     double zwischenWert[54][54];
@@ -289,7 +289,7 @@ int MainWindow::calculate(int u1, int u2, int reihe)
     qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
 
-  if (reihe == 3)
+  if (reihe == E12)
   {
     double widWerte[108][108];
     double zwischenWert[108][108];
@@ -320,7 +320,7 @@ int MainWindow::calculate(int u1, int u2, int reihe)
     qDebug() << "ri=" << ri << " rj=" << rj << endl;
   }
 
-  if (reihe == 4)
+  if (reihe == E24)
   {
     double widWerte[216][216];
     double zwischenWert[216][216];
