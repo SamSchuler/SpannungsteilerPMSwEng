@@ -17,13 +17,22 @@ namespace Ui
 {
 class MainWindow;
 }
-
-class MainWindow : public QMainWindow
-{
+///
+/// \brief The MainWindow class
+///
+class MainWindow : public QMainWindow {
   Q_OBJECT
 
  public:
+  ///
+  /// \brief MainWindow Konstruktor
+  /// \param parent
+  ///
   explicit MainWindow(QWidget* parent = nullptr);
+
+  ///
+  /// \brief MainWindow Destruktor
+  ///
   ~MainWindow();
 
   ///
@@ -54,19 +63,20 @@ class MainWindow : public QMainWindow
   /// \param fail für Fehler
   ///
   void outputValues(double r1, double r2, int fail);  // Ausgabe
+
   ///
-  /// \brief calculate
-  /// \param u1
-  /// \param u2
-  /// \param reihe
-  /// \return
-  ///
-  int calculate(
-      int u1, int u2,
-      int reihe);  ///\brief Berechnung der optimalen Werte von R1 und R2.
+  /// \brief Berechnung der optimalen Werte von R1 und R2.
   /// Alle Verhältnisse aus R1 und R2 werden in einem generierten Array
   /// abgespeichert.
   /// Aus diesem Array wird das best mögliche Verhältnis ausgegeben.
+  ///
+  /// \param u1: Übergabe von Spannung u1
+  /// \param u2: Übergabe von Spannung u2
+  /// \param reihe: Übergabe der ausgewählten E-Reihe
+  /// \return 1 wenn Widerstandsverhältnis 1 zu 1 ist. Das heisst, jeder Wert
+  /// ist möglich. Sonst 0.
+
+  int calculate(int u1, int u2, int reihe);
 
  private:
   Ui::MainWindow* ui;
